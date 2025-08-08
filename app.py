@@ -43,7 +43,7 @@ company_age=st.number_input("How old is Your Company",min_value=0)
 company_age=company_age_scaler.transform([[company_age]])[0][0]
 input_df = pd.DataFrame(
     data=[[continent, education_of_employee, has_job_experience, region_of_employment,
-           full_time_position, yearly_wage, company_size, company_age]],
+           full_time_position,company_size, yearly_wage,  company_age]],
     columns=["continents_modified", "education_of_employee", "has_job_experience", "region_of_employment","full_time_position", "company_size","yearly_wage" , "company_age"]
 )
 if st.button("predict"):
@@ -51,4 +51,5 @@ if st.button("predict"):
         st.write("### Congrats ! Your visa is approved 🎉🎉")
     else:
         st.write("### Unfortunately, your visa application was not approved 💔")
+
 
