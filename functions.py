@@ -12,23 +12,33 @@ def calc_wage(row,hours=40):
 
 def label_company_size(row):
     if row["no_of_employees"]<1022:
-        return "small"
+        return 0
     elif row["no_of_employees"]<2109:
-        return "medium"
+        return 1
     elif row["no_of_employees"]<3504:
-        return "large"
+        return 2
     else:
-        return "very large"
+        return 3
     
 def convert_continent(row):
     if row["continent"]=="Asia":
-        return "Asia"
+        return 0
     elif row["continent"]=="North America":
-        return "North America"
+        return 1
     elif row["continent"]=="Europe":
-        return "Europe"
+        return 2
     else:
-        return "other"
+        return 3
+# "High School","Bachelor's","Master's","Doctorate
+def education_encoder(row):
+    if row["education_of_employee"]=="Asia":
+        return 0
+    elif row["education_of_employee"]=="Bachelor's":
+        return 1
+    elif row["education_of_employee"]=="Master's":
+        return 2
+    else:
+        return 3
     
 def calc_company_age(row):
     age=datetime.now().year-row["yr_of_estab"]
