@@ -21,7 +21,7 @@ continent=convert_continent(row={"continent":continent})
 education_of_employee=str(st.selectbox(label="Enter your highest qualification",options=["High School","Bachelor's","Master's","Doctorate"]))
 education_of_employee=education_encoder.transform([education_of_employee])[0]
 has_job_experience=st.radio(label="Do you have a prior work experince",options=["Yes","No"],horizontal=True)
-has_job_experience=1 if has_job_experience=="Yes" else "0"
+has_job_experience=1 if has_job_experience=="Yes" else 0
 region_of_employment=st.selectbox("What region You are employed in",options=["West","Northeast","South","Midwest","Island"])
 region_of_employment=region_encoder.transform([region_of_employment])[0]
 full_time_position=st.radio(label="Do you have a full time job",options=["Yes","No"],horizontal=True)
@@ -51,3 +51,4 @@ if st.button("predict"):
         st.write("### Congrats ! Your visa is approved 🎉🎉")
     else:
         st.write("### Unfortunately, your visa application was not approved 💔")
+
